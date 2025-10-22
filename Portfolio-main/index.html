@@ -1,0 +1,402 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compability" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Design </title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Gul Zareen.</a>
+        <nav class="navbar">
+            <a href="#" class="active"> Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <section class="home">
+        <div class="home-content">
+            <h1 >Hi, I'm Gul </h1>
+            <h3>fulstack Developer</h3>
+            <p> A passionate cybersecurity enthusiast and developer skilled in C++, Python, MySQL, and ethical hacking.
+                 I love solving problems, building secure solutions, and exploring AI concepts.
+                Let’s connect and create something great together! </p>
+            <div class="btn-box">
+                <a href="#">Hire Me</a>
+                <a href="#">Let's Talk</a>
+            </div>
+
+        </div>
+        <div class="home-sci">
+            <!-- <a href="#"> <i class='bx bxl-linkedin' ></i></a>
+            <a href="#"><i class='bx bxl-instagram' ></i> </a>
+            <a href="#"><i class='bx bxl-twitter' ></i></a>
+            <a href="#"><i class='bx bxl-whatsapp' ></i></a> -->
+            <a href="https://instagram.com/gul_bazai" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/Gul zaree" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Gulzrn" target="_blank"><i class="fab fa-github"></i></a>
+
+        <!-- </div>
+        <span class="home-imgHover"></span>
+    </section>
+    <div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h3>Profile Info</h3>
+      <p>Email: gul@example.com</p>
+    </div>
+    <div class="col-8">
+      <h3>About Me</h3>
+      <p>I’m a full-stack developer passionate about cybersecurity and AI.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html> --> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Design</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: #081b29;
+            color: #ededed;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 25px;
+            color: #ededed;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .navbar a {
+            font-size: 18px;
+            color: #ededed;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+            transition: .3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #00abf0;
+        }
+
+        /* Home Section */
+        .home {
+            height: 100vh;
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStB8620YPbukO2MW1no0XecAju-Dh-fdgZqDqXOGgHhzmsp970Nz64H8bH3w--FaEvjOE&usqp=CAU') no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+        }
+
+        .home-content {
+            max-width: 600px;
+        }
+
+        .home-content h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .home-content h3 {
+            font-size: 32px;
+            font-weight: 700;
+            color: lightblue;
+        }
+
+        .home-content p {
+            font-size: 16px;
+            margin: 20px 0 40px;
+        }
+
+        .btn-box {
+            display: flex;
+            justify-content: space-between;
+            width: 345px;
+            height: 50px;
+        }
+
+        .btn-box a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            height: 100%;
+            background: #00abf0;
+            border: 2px solid #00abf0;
+            border-radius: 8px;
+            font-size: 19px;
+            color: #081b29;
+            text-decoration: none;
+            font-weight: 600;
+            transition: .5s;
+        }
+
+        .btn-box a:hover {
+            color: #00abf0;
+            background: transparent;
+        }
+
+        /* Social Icons */
+        .home-sci {
+            position: absolute;
+            bottom: 40px;
+            width: 170px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .home-sci a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 2px solid #00abf0;
+            border-radius: 50%;
+            font-size: 20px;
+            color: #00abf0;
+            text-decoration: none;
+            transition: .5s;
+        }
+
+        .home-sci a:hover {
+            color: #081b29;
+            background: #00abf0;
+        }
+
+        /* 12-Column Grid System */
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 15px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+
+        [class*="col-"] {
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .col-1 { width: 8.33%; }
+        .col-2 { width: 16.66%; }
+        .col-3 { width: 25%; }
+        .col-4 { width: 33.33%; }
+        .col-6 { width: 50%; }
+        .col-8 { width: 66.66%; }
+        .col-12 { width: 100%; }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+        }
+
+        .about h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #00abf0;
+            margin-bottom: 30px;
+        }
+
+        .about p {
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #00abf0;
+            margin-bottom: 30px;
+        }
+
+        .service-box {
+            background: #0a2e45;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.4s;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+            background: #00abf0;
+            color: #081b29;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #00abf0;
+            margin-bottom: 30px;
+        }
+
+        .contact p {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 992px) {
+            .col-4, .col-6, .col-8 {
+                width: 100%;
+            }
+            .navbar a {
+                font-size: 16px;
+            }
+            .home-content h1 {
+                font-size: 40px;
+            }
+            .home-content h3 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                display: none;
+            }
+            .home-content h1 {
+                font-size: 32px;
+            }
+            .home-content p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Gul Zareen.</a>
+        <nav class="navbar">
+            <a href="#" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="home-content">
+            <h1>Hi, I'm Gul</h1>
+            <h3>Full Stack Developer</h3>
+            <p>A passionate cybersecurity enthusiast and developer skilled in C++, Python, MySQL, and ethical hacking. I love solving problems, building secure solutions, and exploring AI concepts. Let’s connect and create something great together!</p>
+            <div class="btn-box">
+                <a href="#">Hire Me</a>
+                <a href="#">Let's Talk</a>
+            </div>
+        </div>
+
+        <div class="home-sci">
+            <a href="https://instagram.com/gul_bazai" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/gul-zareen" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Gulzrn" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </section>
+
+    <!-- About Section (using Grid) -->
+    <section id="about" class="about container">
+        <h2>About Me</h2>
+        <div class="row">
+            <div class="col-4">
+                <img src="https://via.placeholder.com/250" alt="Profile Picture" style="width:100%; border-radius:10px;">
+            </div>
+            <div class="col-8">
+                <p>Hi! I'm Gul Zareen — a full-stack developer and cybersecurity learner. I enjoy exploring new technologies and solving real-world problems through code. My goal is to build secure, efficient, and user-friendly software applications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services container">
+        <h2>My Services</h2>
+        <div class="row">
+            <div class="col-4">
+                <div class="service-box">
+                    <i class="fas fa-laptop-code fa-2x"></i>
+                    <h3>Web Development</h3>
+                    <p>Creating responsive and modern websites using HTML, CSS, JavaScript, and frameworks.</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="service-box">
+                    <i class="fas fa-lock fa-2x"></i>
+                    <h3>Cybersecurity</h3>
+                    <p>Ensuring systems and data security with ethical hacking and penetration testing skills.</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="service-box">
+                    <i class="fas fa-brain fa-2x"></i>
+                    <h3>AI Integration</h3>
+                    <p>Integrating artificial intelligence to enhance automation and system intelligence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact container">
+        <h2>Contact Me</h2>
+        <p>Email: gul@example.com | Phone: +92 300 1234567</p>
+    </section>
+</body>
+</html>

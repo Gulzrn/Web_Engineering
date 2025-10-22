@@ -1,0 +1,106 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #5f1755;
+    color: white;
+    padding: 2px;
+    text-align: center;
+}
+
+/* Navigation */
+nav {
+    background: #333;
+    padding: 10px;
+    text-align:right;
+}
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    color: #8a8bdb;
+}
+
+/* Main content */
+main {
+    padding: 40px;
+    background-color: #f8dff7;
+    margin: 20px;
+}
+h2, h3 {
+    color: #5f1755;
+}
+
+/* Highlighted text */
+mark {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+/* Canvas */
+canvas {
+    display: block;
+    margin: 10px 0;
+    background: #642464;
+    align-items: center;
+
+}
+
+/* Form */
+form {
+    background: #a76da4;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 400px;
+    align-items: center;
+}
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+form input, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+form input[type="submit"] {
+    background: #642464;
+    color: white;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+}
+form input[type="submit"]:hover {
+    background: #d46cdd;
+}
+
+/* Footer */
+footer {
+    background: #642464;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+footer a {
+    color: #db9cd1;
+    text-decoration: none;
+    margin: 0 5px;
+}
+footer a:hover {
+    text-decoration: underline;
+}

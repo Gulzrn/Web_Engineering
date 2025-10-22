@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitting Plan - Students</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <button class="back" onclick="goBack()">⬅ Back</button>
+  <h2>Students Info</h2>
+  <form id="studentForm">
+    <input type="text" id="cms" placeholder="CMS ID" required>
+    <input type="text" id="name" placeholder="Name" required>
+    <input type="text" id="batch" placeholder="Batch" required>
+    <input type="text" id="intake" placeholder="Intake" required>
+    <input type="text" id="course" placeholder="Course" required>
+    <button type="button" onclick="addStudent()">Add Student</button>
+    <button type="button" onclick="saveStudents()">Save & Generate Plan</button>
+  </form>
+
+  <div id="studentList"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

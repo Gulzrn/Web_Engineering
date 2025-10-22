@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitting Plan - Result</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="back" onclick="goBack()">⬅ Back</button>
+  <h2>Sitting Plan Result</h2>
+
+  <input type="text" id="search" placeholder="Search student..." onkeyup="searchStudent()">
+
+  <div id="plan"></div>
+
+  <button onclick="window.print()">Print</button>
+
+  <script src="script.js"></script>
+  <script>
+    window.onload = () => {
+      generatePlan();
+    };
+  </script>
+</body>
+</html>
