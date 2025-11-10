@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🍲 Recipe Management System</h1>
+
+    <!-- Recipe Form -->
+    <form id="recipeForm">
+      <input type="text" id="title" placeholder="Recipe Title" required>
+      <textarea id="ingredients" placeholder="Ingredients" required></textarea>
+      <textarea id="instructions" placeholder="Instructions" required></textarea>
+      <input type="file" id="image" accept="image/*">
+      <button type="submit">Add Recipe</button>
+    </form>
+
+    <h2>📜 Recipe List</h2>
+    <input type="text" id="search" placeholder="Search recipe...">
+
+    <!-- Recipes Container -->
+    <div id="recipeList"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
