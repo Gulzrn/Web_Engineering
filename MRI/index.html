@@ -1,0 +1,179 @@
+// index.html (ReactJS/Fake Static Version Example)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedScan AI - Medical Imaging Web</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #2563eb 0%, #6529e8 100%);
+      color: #fff;
+      min-height: 100vh;
+    }
+    .navbar {
+      display: flex; justify-content: space-between; align-items: center; padding: 24px 32px; background: rgba(0,0,40,0.7); backdrop-filter: blur(12px); border-bottom: 1px solid #2155a5; position: sticky; top: 0; z-index: 999; }
+    .navbar .logo { font-weight: 700; font-size: 1.45rem; letter-spacing: 2px; color: #14b8a6; }
+    .navbar .menu a { color: #fff; text-decoration: none; margin: 0 20px; font-weight: 500; transition: color 0.2s; }
+    .navbar .menu a:hover { color: #14b8a6; }
+    .hero { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 70vh; text-align: center; }
+    .hero h1 { font-size: 2.8rem; margin-bottom: 18px; }
+    .hero p { font-size: 1.2rem; margin-bottom: 41px; color: #bae6fd; }
+    .btn-main { background: #14b8a6; color: #fff; font-size: 1.15rem; padding: 12px 36px; border: none; border-radius: 33px; cursor: pointer; box-shadow: 0 8px 32px #0003; font-weight: 600; letter-spacing: 1px; transition: background 0.2s; }
+    .btn-main:hover { background: #10b981; }
+    .section-card { background: rgba(255,255,255,0.088); backdrop-filter: blur(8px); border-radius: 19px; margin: 36px auto; padding: 40px 32px; box-shadow: 0 8px 46px #2c087733, 0 1.5px 6px #14b8a633; color: #323348; width:96%; max-width:700px; color: #e0e0e0; }
+    label { display: block; margin-bottom: 8px; font-weight: 600; color: #14b8a6; }
+    input, select { width: 100%; padding: 13px; margin-bottom: 24px; border-radius: 9px; border: 1px solid #6529e877; background: rgba(255,255,255,0.12); color: #666; font-size: 1rem; box-shadow: 0 1px 3px #0075; }
+    .upload-zone { width:100%; min-height:140px; border:2.5px dashed #14b8a6; border-radius:14px; background:rgba(255,255,255,0.18); display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:24px; animation: fadeIn 2s; }
+    .upload-zone:hover { border-color: #6529e8; background: rgba(20,184,166,0.10); }
+    .scan-preview { max-width: 380px; border-radius:17px; box-shadow:0 8px 28px #14b8a633; margin-bottom:22px; }
+    .stepper { display:flex;justify-content:center;align-items:center;margin:12px 0; }
+    .step { width:41px;height:41px;border-radius:50%;background:#2563eb;color:#fff;font-weight:700;font-size:1.19rem;display:flex;align-items:center;justify-content:center;margin:0 8px;border:2.1px solid #14b8a6; }
+    .step.active { background: #14b8a6; border:2.1px solid #2563eb; }
+    .analysis-panel { margin-top: 20px; padding: 32px 28px; border-radius: 16px; background: rgba(255,255,255,0.10); box-shadow: 0 7px 24px #6529e844; }
+    .ai-chat-panel { margin-top: 22px; padding: 24px; border-radius: 12px; background: rgba(255,255,255,0.14); }
+    .chat-button { background: #6529e8; color: #fff; border: none; border-radius: 7px; padding: 10px 19px; font-size:1rem; cursor:pointer; }
+    .chat-button:hover { background: #2563eb; }
+    .footer { padding: 32px 0; text-align:center; color:#bae6fd; font-size:1.11rem; }
+    @media(max-width:750px) { .hero h1{font-size:2.1rem;} .section-card{padding:24px 9px;} .stepper .step{width:30px;height:30px;font-size:0.99rem;} }
+    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">MedScan AI</div>
+    <div class="menu">
+      <a href="#home">Home</a>
+      <a href="#upload">Upload Scan</a>
+      <a href="#compare">Before/After</a>
+      <a href="#records">Records</a>
+      <a href="#about">About</a>
+    </div>
+  </div>
+
+  <div class="hero" id="home">
+    <h1>AI-Powered Medical Scan Analysis</h1>
+    <p>Get clear, simple explanations. Highlight defects in 3D. Compare scans. Own your data.</p>
+    <button class="btn-main" onclick="document.getElementById('uploadSection').scrollIntoView({behavior:'smooth'})">Get Started</button>
+  </div>
+
+  <div class="section-card" id="uploadSection">
+    <h2>Upload Medical Scan</h2>
+    <div class="stepper">
+      <div class="step active">1</div><span>Upload</span>
+      <div class="step">2</div><span>Analyze & Visualize</span>
+      <div class="step">3</div><span>Report & Share</span>
+    </div>
+    <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
+      <span style="font-size:44px;color:#14b8a6">&#8682;</span><br>
+      <span>Drag & drop or click to upload MRI, CT, X-ray (jpg/png/dicom)</span>
+    </div>
+    <input type="file" id="fileInput" style="display:none;" accept=".jpg,.png,.dcm" onchange="previewScan(event)">
+    <img id="scanPreview" src="" class="scan-preview" style="display:none;">
+    <label>Scan Type</label>
+    <select id="scanType">
+      <option>X-Ray</option>
+      <option>CT</option>
+      <option>MRI</option>
+      <option>Ultrasound</option>
+    </select>
+    <label>Body Region</label>
+    <input id="bodyRegion" placeholder="e.g., Chest, Spine, Knee" />
+    <button class="btn-main" onclick="showAnalysis()">Analyze Scan</button>
+  </div>
+
+  <div class="analysis-panel" id="analysisPanel" style="display:none;">
+    <h2>AI Findings</h2>
+    <p id="techResult">Technical Result: Lung fields appear clear. Heart size within normal limits.</p>
+    <p id="simpleResult">Simple Explanation: Your scan looks healthy. No major concerns!</p>
+    <p>Confidence Level: <span id="confidence">95%</span></p>
+    <h3>Defect Visualization (3D)</h3>
+    <div id="threeDPlaceholder" style="background:rgba(45,45,57,0.5);height:180px;border-radius:12px;text-align:center;display:flex;align-items:center;justify-content:center;">3D visualization demo area (ready for Three.js/OHIF integration)</div>
+    <button class="btn-main" onclick="showChatPanel()">Ask AI Chatbot</button>
+    <button class="btn-main" onclick="showCompareSection()">Compare Before/After</button>
+    <button class="btn-main" onclick="showRecordsSection()">View Blockchain Medical Record</button>
+    <button class="btn-main" onclick="resetApp()">Analyze Another Scan</button>
+  </div>
+
+  <div class="ai-chat-panel" id="chatPanel" style="display:none;">
+    <h2>AI Medical Chatbot</h2>
+    <textarea style="width:100%;height:70px;border-radius:7px;padding:10px;font-size:1rem;" placeholder="Ask a medical question..."></textarea><br>
+    <button class="chat-button">Send</button>
+    <p style="margin-top:12px">AI Chatbot demo reply: "Your scan appears normal. For more concerns, contact your doctor."</p>
+    <button class="chat-button" onclick="hideChatPanel()">Close Chat</button>
+  </div>
+
+  <div class="section-card" id="compareSection" style="display:none;">
+    <h2>Compare Scans (Before/After)</h2>
+    <span>Select and upload two scans to compare surgical results.</span>
+    <div class="stepper">
+      <div class="step active">1</div><span>Upload Before Scan</span>
+      <div class="step active">2</div><span>Upload After Scan</span>
+      <div class="step">3</div><span>Analysis & 3D View</span>
+    </div>
+    <input type="file" id="beforeScan" accept=".jpg,.png,.dcm" onchange="previewCompare(event,'before')">
+    <input type="file" id="afterScan" accept=".jpg,.png,.dcm" onchange="previewCompare(event,'after')">
+    <img id="beforePreview" src="" class="scan-preview" style="display:none;">
+    <img id="afterPreview" src="" class="scan-preview" style="display:none;">
+    <div class="upload-zone" style="height:72px;text-align:center;">3D Comparison visualization here (integrate Three.js/OHIF in future)</div>
+    <button class="btn-main" onclick="showAnalysis()">Back to Analysis</button>
+  </div>
+
+  <div class="section-card" id="recordsSection" style="display:none;">
+    <h2>Blockchain Medical Records</h2>
+    <p>Your scans and reports are securely stored on blockchain. Only your authorized doctors can view/change files.<br>Audit trail of access. Blockchain demo hash: <span style="color:#10b981;font-weight:800">0xe1b1...b4e8</span></p>
+    <button class="btn-main">Share Report with Doctor</button>
+    <button class="btn-main">Add/Edit Notes</button>
+    <button class="btn-main" onclick="hideRecordsSection()">Close Records</button>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 MedScan AI | <a href="#">Privacy Policy</a> | <a href="#">Terms</a><br>
+    Powered by AI, Blockchain, and 3D Tech | <span style="color:#14b8a6">IMPORTANT: This site does not provide medical advice.</span>
+  </div>
+
+  <script>
+    function previewScan(e) {
+      let file = e.target.files;
+      if (!file) return;
+      let url = URL.createObjectURL(file);
+      document.getElementById('scanPreview').src = url;
+      document.getElementById('scanPreview').style.display = 'block';
+    }
+    function showAnalysis() {
+      document.getElementById('analysisPanel').style.display = 'block';
+      window.scrollTo(0, document.getElementById('analysisPanel').offsetTop - 40);
+    }
+    function resetApp() {
+      document.getElementById('analysisPanel').style.display = 'none';
+      document.getElementById('scanPreview').style.display = 'none';
+      document.getElementById('chatPanel').style.display = 'none';
+      document.getElementById('compareSection').style.display = 'none';
+      document.getElementById('recordsSection').style.display = 'none';
+      window.scrollTo(0, document.getElementById('home').offsetTop);
+    }
+    function showChatPanel() {
+      document.getElementById('chatPanel').style.display = 'block';
+      window.scrollTo(0, document.getElementById('chatPanel').offsetTop - 40);
+    }
+    function hideChatPanel() { document.getElementById('chatPanel').style.display = 'none'; }
+    function showCompareSection() {
+      document.getElementById('compareSection').style.display = 'block';
+      window.scrollTo(0, document.getElementById('compareSection').offsetTop - 30);
+    }
+    function previewCompare(e,type) {
+      let url = URL.createObjectURL(e.target.files);
+      document.getElementById(type + 'Preview').src = url;
+      document.getElementById(type + 'Preview').style.display = 'block';
+    }
+    function showRecordsSection() {
+      document.getElementById('recordsSection').style.display = 'block';
+      window.scrollTo(0, document.getElementById('recordsSection').offsetTop - 20);
+    }
+    function hideRecordsSection() { document.getElementById('recordsSection').style.display = 'none'; }
+  </script>
+</body>
+</html>
